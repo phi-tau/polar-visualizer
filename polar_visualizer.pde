@@ -7,10 +7,10 @@
 //-------------------------------
 //drawing options
 boolean processingStyle=false;    //Processing style angles (CW)?
-boolean waitForStep=false;
-boolean drawVectors=false; //draw lines from origin to point
-double animationWidth=8*PI; //stop at integer multiples of this number
-final double DELTATHETA = PI/4000;   //what change in angle? needs to be multiple of PI. smaller->slower animation
+boolean waitForStep=true;
+boolean drawVectors=true; //draw lines from origin to point
+double animationWidth=PI/4; //stop at integer multiples of this number
+final double DELTATHETA = PI/400;   //what change in angle? needs to be multiple of PI. smaller->slower animation
 int sizeOfPoint = 4;  //strokeWeight of the highlited point. Use 2 for same as all other point
 boolean saveImages=true;
 boolean useDegreesForLabels=true;
@@ -107,9 +107,9 @@ void draw() {
     } else if (t>=theta2) {
       if(saveImages){
       PImage graph = get(0,0,(int) graphwidth,height);
-      graph.save("graph"+r+".png");
+      graph.save("graph"+".png");
       state=WELCOME;
-    }
+    
     }
     translate(graphwidth/2, height/2);
     stroke(255, 0, 0);
